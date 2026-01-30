@@ -633,14 +633,6 @@
       .article-content {
         padding-left: 0;
       }
-
-      .bridge-section {
-        align-items: flex-start !important;
-      }
-
-      .bridge-section > div {
-        max-width: 100% !important;
-      }
     }
   </style>
 </head>
@@ -720,8 +712,8 @@
       </ul>
     </section>
 
-    <!-- Bridge: From © to ARR (RIGHT-ALIGNED) -->
-    <section class="bridge-section" style="border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: flex-end;">
+    <!-- Bridge Part 1: AI Shift (RIGHT-ALIGNED) -->
+    <section style="border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: flex-end;">
       <div style="max-width: 700px;">
         <div class="section-header" style="text-align: right;">FROM © TO Ⓐ Ⓡ Ⓡ</div>
 
@@ -729,57 +721,65 @@
 
         <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; text-align: right;">Now anyone generates images, text, music in seconds. Training data includes millions of works. Ownership is contested. Courts are confused.</p>
 
-        <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; text-align: right;">The assumptions that made © work&mdash;scarcity, clear authorship, physical copies&mdash;no longer hold.</p>
+        <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 0; text-align: right;">The assumptions that made © work&mdash;scarcity, clear authorship, physical copies&mdash;no longer hold.</p>
+      </div>
+    </section>
 
-        <p style="color: var(--fg); font-size: 1.25rem; margin-bottom: 2.5rem; text-align: right;">Introducing <strong>All Rights Respected</strong>&mdash;the evolution.</p>
+    <!-- Bridge Part 2: Introducing ARR (LEFT-ALIGNED) -->
+    <section style="border-top: 1px solid var(--border);">
+      <p style="color: var(--fg); font-size: 1.25rem; margin-bottom: 2.5rem;">Introducing <strong>All Rights Respected</strong>&mdash;the evolution.</p>
 
-        <!-- Word-by-word breakdown -->
-        <div style="margin-bottom: 3rem;">
-          <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; color: var(--muted); margin-bottom: 1.5rem; text-align: right;">ONE WORD. ONE PARADIGM.</p>
+      <!-- Word-by-word breakdown -->
+      <div style="margin-bottom: 3rem;">
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; color: var(--muted); margin-bottom: 1.5rem;">ONE WORD. ONE PARADIGM.</p>
 
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); max-width: 500px; margin-bottom: 2rem; margin-left: auto;">
-            <!-- Row 1: Reserved -->
-            <div style="background: var(--bg); padding: 1.25rem; text-align: center;">
-              <div style="font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; opacity: 0.5;">ALL</div>
-              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted);">universal scope</div>
-            </div>
-            <div style="background: var(--bg); padding: 1.25rem; text-align: center;">
-              <div style="font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; opacity: 0.5;">RIGHTS</div>
-              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted);">creative claim</div>
-            </div>
-            <div style="background: var(--bg); padding: 1.25rem; text-align: center; opacity: 0.5;">
-              <div style="font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; text-decoration: line-through; color: var(--muted);">RESERVED</div>
-              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted);">legal control</div>
-            </div>
-            <!-- Row 2: Respected -->
-            <div style="background: var(--bg); padding: 1.25rem; text-align: center; border-top: 1px solid var(--border);">
-              <div style="font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; opacity: 0.5;">ALL</div>
-              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted);">universal scope</div>
-            </div>
-            <div style="background: var(--bg); padding: 1.25rem; text-align: center; border-top: 1px solid var(--border);">
-              <div style="font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; opacity: 0.5;">RIGHTS</div>
-              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted);">creative claim</div>
-            </div>
-            <div style="background: var(--bg); padding: 1.25rem; text-align: center; border-top: 1px solid var(--border); border-left: 2px solid var(--accent);">
-              <div style="font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--accent);">RESPECTED</div>
-              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--accent);">social acknowledgment</div>
-            </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); max-width: 500px; margin-bottom: 2rem;">
+          <!-- Row 1: Reserved -->
+          <div style="background: var(--bg); padding: 1.25rem; text-align: center;">
+            <div style="font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; opacity: 0.5;">ALL</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted);">universal scope</div>
           </div>
-
-          <div style="border-right: 2px solid var(--accent); padding-right: 1.5rem; margin-left: auto; max-width: 500px;">
-            <p style="font-size: 1.1rem; font-style: italic; color: var(--fg); margin: 0; text-align: right;">The foundation of human creativity isn't monetary&mdash;it's respect.</p>
+          <div style="background: var(--bg); padding: 1.25rem; text-align: center;">
+            <div style="font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; opacity: 0.5;">RIGHTS</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted);">creative claim</div>
+          </div>
+          <div style="background: var(--bg); padding: 1.25rem; text-align: center; opacity: 0.5;">
+            <div style="font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; text-decoration: line-through; color: var(--muted);">RESERVED</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted);">legal control</div>
+          </div>
+          <!-- Row 2: Respected -->
+          <div style="background: var(--bg); padding: 1.25rem; text-align: center; border-top: 1px solid var(--border);">
+            <div style="font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; opacity: 0.5;">ALL</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted);">universal scope</div>
+          </div>
+          <div style="background: var(--bg); padding: 1.25rem; text-align: center; border-top: 1px solid var(--border);">
+            <div style="font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; opacity: 0.5;">RIGHTS</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted);">creative claim</div>
+          </div>
+          <div style="background: var(--bg); padding: 1.25rem; text-align: center; border-top: 1px solid var(--border); border-left: 2px solid var(--accent);">
+            <div style="font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--accent);">RESPECTED</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--accent);">social acknowledgment</div>
           </div>
         </div>
 
+        <div style="border-left: 2px solid var(--accent); padding-left: 1.5rem; max-width: 500px;">
+          <p style="font-size: 1.1rem; font-style: italic; color: var(--fg); margin: 0;">The foundation of human creativity isn't monetary&mdash;it's respect.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bridge Part 3: The Protocol (RIGHT-ALIGNED) -->
+    <section style="border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: flex-end;">
+      <div style="max-width: 700px;">
+        <h2 style="margin-bottom: 1.5rem; text-align: right;">No lawyers. No registries.<br>Just mutual respect.</h2>
+
         <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; text-align: right;">Not a replacement for copyright&mdash;a complement. A lightweight attestation that travels with the work and answers what matters:</p>
 
-        <ul style="color: var(--muted); font-size: 1.05rem; line-height: 2; margin-bottom: 2rem; list-style: none; padding-left: 0; text-align: right;">
+        <ul style="color: var(--muted); font-size: 1.05rem; line-height: 2; margin-bottom: 0; list-style: none; padding-left: 0; text-align: right;">
           <li style="padding-right: 1.5rem; position: relative;">Who directed this creation? <span style="position: absolute; right: 0; color: var(--accent);">—</span></li>
           <li style="padding-right: 1.5rem; position: relative;">What tools were used? <span style="position: absolute; right: 0; color: var(--accent);">—</span></li>
           <li style="padding-right: 1.5rem; position: relative;">What was the intent? <span style="position: absolute; right: 0; color: var(--accent);">—</span></li>
         </ul>
-
-        <p style="color: var(--fg); font-size: 1.1rem; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.02em; text-align: right;">No lawyers. No registries. Just mutual respect.</p>
       </div>
     </section>
 
