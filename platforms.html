@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Platforms — All Rights Respected</title>
+  <meta name="description" content="Integrate ARR attestations into your platform. Detect, display, and honor creator attribution with the open protocol.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --fg: #e8e4dc;
+      --muted: #8a8680;
+      --border: #2a2825;
+      --accent: #c4b998;
+      --red: #a85454;
+      --green: #a8c490;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 18px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Ticker */
+    .ticker {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem 0;
+      z-index: 100;
+      overflow: hidden;
+    }
+
+    .ticker-content {
+      display: flex;
+      animation: scroll 30s linear infinite;
+      white-space: nowrap;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .ticker-content span {
+      padding: 0 2rem;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 2.5rem;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      z-index: 99;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--fg);
+    }
+
+    .logo-symbol {
+      font-size: 1.25rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      display: flex;
+      gap: 0.1em;
+    }
+
+    .logo-text {
+      /* visible on desktop */
+    }
+
+    .mobile-wordmark {
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--fg);
+    }
+
+    /* Main */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 8rem 3rem 4rem;
+    }
+
+    /* Title block */
+    .title-block {
+      margin-bottom: 4rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.25rem 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 1.5rem 0 0.75rem;
+      color: var(--accent);
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    /* Code */
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+      background: #0f0f0d;
+      padding: 0.15rem 0.4rem;
+      border-radius: 2px;
+    }
+
+    pre {
+      background: #0f0f0d;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      overflow-x: auto;
+      margin: 1rem 0 1.5rem;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .comment { color: var(--muted); }
+    .key { color: var(--accent); }
+    .string { color: var(--green); }
+    .bool { color: #c490a8; }
+    .keyword { color: #c490a8; }
+    .function { color: #90c4a8; }
+
+    /* Lists */
+    ul, ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Feature grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: var(--bg);
+      padding: 1.5rem;
+    }
+
+    .feature-card h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      color: var(--fg);
+      margin-top: 0;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Principles */
+    .principle-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .principle-card {
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+    }
+
+    .principle-card h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      margin-top: 0;
+    }
+
+    .principle-card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Badge display example */
+    .badge-example {
+      background: #0f0f0d;
+      border: 1px solid var(--border);
+      padding: 2rem;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    .arr-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg);
+      border: 1px solid var(--accent);
+      padding: 0.5rem 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+    }
+
+    .arr-badge-symbol {
+      font-size: 1rem;
+    }
+
+    .badge-caption {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    /* Note */
+    .note {
+      border-left: 2px solid var(--accent);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      background: rgba(196, 185, 152, 0.05);
+    }
+
+    .note-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .note p {
+      margin: 0;
+    }
+
+    .warning {
+      border-left-color: var(--red);
+      background: rgba(168, 84, 84, 0.05);
+    }
+
+    .warning .note-title {
+      color: var(--red);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      color: var(--fg);
+      background: transparent;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .btn-primary {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0 0.5rem;
+    }
+
+    footer a:hover {
+      color: var(--fg);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        padding: 0.75rem 1rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .logo-text {
+        display: none;
+      }
+
+      .logo-symbol {
+        font-size: 1.1rem;
+      }
+
+      .mobile-wordmark {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--border);
+        margin-top: 0.5rem;
+        color: var(--fg);
+      }
+
+      main {
+        padding: 7rem 1.5rem 3rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .principle-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ticker -->
+  <div class="ticker">
+    <div class="ticker-content">
+      <span>ALL RIGHTS RESPECTED</span>
+      <span>OPEN PROTOCOL v0.1</span>
+      <span>INFRASTRUCTURE FOR THE RESPECT ECONOMY</span>
+      <span>IMPLEMENT FREELY</span>
+      <span>NO PERMISSION REQUIRED</span>
+      <span>ALL RIGHTS RESPECTED</span>
+      <span>OPEN PROTOCOL v0.1</span>
+      <span>INFRASTRUCTURE FOR THE RESPECT ECONOMY</span>
+      <span>IMPLEMENT FREELY</span>
+      <span>NO PERMISSION REQUIRED</span>
+    </div>
+  </div>
+
+  <header>
+    <a href="index.html" class="logo">
+      <span class="logo-symbol"><span>&#9398;</span><span>&#9415;</span><span>&#9415;</span></span>
+      <span class="logo-text">ALL RIGHTS RESPECTED</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="spec.html">Spec</a>
+      <a href="sdk.html">SDK</a>
+      <a href="verify.html">Verify</a>
+    </nav>
+    <div class="mobile-wordmark">ALL RIGHTS RESPECTED</div>
+  </header>
+
+  <main>
+    <div class="title-block">
+      <span class="page-badge">FOR PLATFORMS</span>
+      <h1>Integrate ARR</h1>
+      <p class="subtitle">Detect, display, and honor creative attribution on your platform</p>
+    </div>
+
+    <section>
+      <h2>Why Integrate ARR?</h2>
+      <p>As AI-generated content becomes ubiquitous, users and creators alike want clarity about what they're seeing. ARR provides a standard way to surface creative intent and attribution without requiring complex legal frameworks.</p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>BUILD TRUST</h3>
+          <p>Show users that your platform respects creator attribution. Transparency builds loyalty.</p>
+        </div>
+        <div class="feature-card">
+          <h3>ZERO COST</h3>
+          <p>No licensing fees, no API keys, no accounts. ARR is infrastructure, not a product.</p>
+        </div>
+        <div class="feature-card">
+          <h3>FUTURE-PROOF</h3>
+          <p>As regulations evolve, platforms with attribution infrastructure will be better positioned.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Integration Levels</h2>
+
+      <h3>Level 1: Detection &amp; Display</h3>
+      <p>The simplest integration. When content is uploaded or displayed, check for an ARR attestation and show a badge if present.</p>
+
+      <pre><code><span class="keyword">import</span> { extractAttestation, verifyAttestation } <span class="keyword">from</span> <span class="string">'@allrightsrespected/sdk'</span>;
+
+<span class="comment">// On file upload or display</span>
+<span class="keyword">async function</span> <span class="function">checkAttestation</span>(fileBuffer) {
+  <span class="keyword">const</span> signed = <span class="keyword">await</span> <span class="function">extractAttestation</span>(fileBuffer);
+
+  <span class="keyword">if</span> (!signed) {
+    <span class="keyword">return</span> { hasAttestation: <span class="bool">false</span> };
+  }
+
+  <span class="keyword">const</span> result = <span class="keyword">await</span> <span class="function">verifyAttestation</span>(signed);
+
+  <span class="keyword">return</span> {
+    hasAttestation: <span class="bool">true</span>,
+    valid: result.valid,
+    expired: result.expired,
+    attestation: signed.attestation
+  };
+}</code></pre>
+
+      <div class="badge-example">
+        <div class="arr-badge">
+          <span class="arr-badge-symbol">&#9415;</span>
+          <span>ARR ATTESTED</span>
+        </div>
+        <div class="badge-caption">Example badge for verified attestation</div>
+      </div>
+
+      <h3>Level 2: Attestation Creation</h3>
+      <p>Allow creators to add attestations when uploading content. Provide a simple UI for entering intent and generating signed attestations.</p>
+
+      <pre><code><span class="keyword">import</span> { createAttestation, signAttestation } <span class="keyword">from</span> <span class="string">'@allrightsrespected/sdk'</span>;
+
+<span class="comment">// On upload, if user opts in</span>
+<span class="keyword">async function</span> <span class="function">addAttestation</span>(file, userIntent, userPrivateKey) {
+  <span class="keyword">const</span> attestation = <span class="function">createAttestation</span>({
+    creator: <span class="string">`https://yourplatform.com/users/${userId}`</span>,
+    intent: userIntent,
+    tool: <span class="string">'manual-upload'</span>
+  });
+
+  <span class="keyword">const</span> signed = <span class="keyword">await</span> <span class="function">signAttestation</span>(attestation, userPrivateKey);
+  <span class="keyword">const</span> embeddedFile = <span class="keyword">await</span> <span class="function">embedAttestation</span>(file, signed);
+
+  <span class="keyword">return</span> embeddedFile;
+}</code></pre>
+
+      <h3>Level 3: Full Integration</h3>
+      <p>Complete ARR support including key management, revocation checking, and upstream attribution chains.</p>
+
+      <ul>
+        <li>User key generation and secure storage</li>
+        <li>Periodic revocation list checking</li>
+        <li>Upstream attestation traversal and display</li>
+        <li>Attestation renewal workflows</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Integration Principles</h2>
+
+      <div class="principle-grid">
+        <div class="principle-card">
+          <h3>NEVER REQUIRE ARR</h3>
+          <p>Content without attestations must be treated equally. Requiring ARR for upload or visibility violates the protocol's principles.</p>
+        </div>
+        <div class="principle-card">
+          <h3>SHOW, DON'T ENFORCE</h3>
+          <p>ARR is for visibility, not gatekeeping. Display attestation information; don't use it for access control.</p>
+        </div>
+        <div class="principle-card">
+          <h3>RESPECT EXPIRATION</h3>
+          <p>Expired attestations should be displayed differently. Don't treat them as invalid—they're historical records.</p>
+        </div>
+        <div class="principle-card">
+          <h3>PRESERVE METADATA</h3>
+          <p>When processing images, preserve XMP metadata including attestations. Don't strip attribution.</p>
+        </div>
+      </div>
+
+      <div class="warning">
+        <div class="note-title">CRITICAL</div>
+        <p>Platforms that strip attestation metadata, require ARR for access, or use ARR for content filtering are violating the protocol's principles and will not be recognized as conformant implementations.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Display Guidelines</h2>
+
+      <h3>Badge Placement</h3>
+      <p>Show attestation badges near the content, not hidden in menus. Users should see attribution status at a glance.</p>
+
+      <h3>Status Indicators</h3>
+      <ul>
+        <li><strong>Valid</strong> — Signature verified, not expired</li>
+        <li><strong>Expired</strong> — Signature verified, past expiration date</li>
+        <li><strong>Unverified</strong> — Cannot verify signature (missing key)</li>
+        <li><strong>None</strong> — No attestation present (neutral, not negative)</li>
+      </ul>
+
+      <h3>Detail View</h3>
+      <p>On click/tap, show full attestation details: creator identifier, intent, tool used, creation date, expiration date, and license if present.</p>
+
+      <div class="note">
+        <div class="note-title">RECOMMENDATION</div>
+        <p>Consider adding a "Learn more about ARR" link to help users understand what attestations mean. Point to <code>allrightsrespected.com</code> or create your own explainer page.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Get Started</h2>
+
+      <p>Ready to integrate? Here's how to begin:</p>
+
+      <ol>
+        <li>Install the SDK: <code>npm install @allrightsrespected/sdk</code></li>
+        <li>Start with Level 1: detection and display</li>
+        <li>Test with files that have attestations (use our <a href="verify.html" style="color: var(--accent);">verification tool</a> to check)</li>
+        <li>Gradually expand to Levels 2 and 3 based on user demand</li>
+      </ol>
+
+      <div class="btn-group">
+        <a href="sdk.html" class="btn btn-primary">Read SDK Documentation</a>
+        <a href="spec.html" class="btn">View Full Specification</a>
+        <a href="mailto:implement@allrightsrespected.com" class="btn">Contact for Support</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 ALL RIGHTS RESPECTED</p>
+    <p>This documentation is released into the public domain under CC0.</p>
+    <div style="margin-top: 1rem;">
+      <a href="index.html">HOME</a>
+      <a href="spec.html">SPEC</a>
+      <a href="sdk.html">SDK</a>
+      <a href="verify.html">VERIFY</a>
+    </div>
+  </footer>
+</body>
+</html>
