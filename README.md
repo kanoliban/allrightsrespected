@@ -1,102 +1,67 @@
 # All Rights Respected
 
-> An open protocol for creative attribution in the age of AI.
+---
 
-**Free to implement. Impossible to own. Designed to be given away.**
+I don't know if this will work.
 
-## What is ARR?
+I don't even know if it's needed.
 
-ARR (All Rights Respected) is an open protocol for creative attribution. It allows creators to attach attestations to their AI-generated works, declaring their creative intent and establishing attribution—without centralized registries, licensing fees, or corporate control.
+But here's what I do know: I can sit at a keyboard, type a few words, and something that didn't exist before now exists. A poster. A song. A story. The machine and I, collaborating on something neither of us could make alone.
 
-## The Five Articles
+And then what?
 
-1. **Intent is Authorship** — The one who directs creation holds creative claim.
-2. **Infrastructure Must Be Free** — Protocols that charge become products. Products compete. Competition fragments.
-3. **Respect Scales, Control Doesn't** — We build for billions by building for trust, not litigation.
-4. **The Right to Disappear** — Attestations expire. Creators revoke. Nothing is permanent without renewal.
-5. **Absence is Valid** — Work without attestation deserves equal respect.
+The legal frameworks are still being written. The courts are deliberating. The platforms are scrambling. Everyone is trying to figure out who owns what, who owes whom, who gets to decide.
 
-## Quick Start
+I don't have those answers.
 
-### For Creators
+What I have is a small idea: **what if we just... respected each other?**
 
-Add an ARR attestation to your work:
+Not enforced. Not litigated. Not DRM'd into oblivion. Just... respected.
 
-```json
-{
-  "attestation": {
-    "version": "arr/0.1",
-    "id": "your-uuid-here",
-    "created": "2026-01-29T10:30:00Z",
-    "creator": "hash:sha256:your-identity-hash",
-    "intent": "Your creative intent description",
-    "tool": "midjourney/6.1",
-    "expires": "2031-01-29",
-    "revocable": true
-  },
-  "signature": "ed25519:your-signature"
-}
-```
+You made something? Say so. Attach a little note that says "I made this, here's when, here's how." If someone sees it, maybe they'll believe you. Maybe they won't. But the note travels with the work, and anyone who cares to look can see it.
 
-### For Platforms
-
-1. Read the [Protocol Specification](./SPEC.md)
-2. Implement attestation detection (check XMP metadata, sidecar files)
-3. Display attestation information to users
-4. (Optional) Verify signatures
-
-### For Developers
-
-```bash
-# Clone the repository
-git clone https://github.com/allrightsrespected/arr.git
-
-# Run the site locally
-cd arr
-npx serve .
-```
-
-## Project Structure
-
-```
-allrightsrespected/
-├── index.html       # Main manifesto site
-├── spec.html        # Protocol specification (HTML)
-├── SPEC.md          # Protocol specification (Markdown)
-├── react-app.jsx    # React component version
-└── README.md        # This file
-```
-
-## Deploying
-
-The site is static HTML. Deploy anywhere:
-
-**Vercel:**
-```bash
-vercel
-```
-
-**Netlify:**
-```bash
-netlify deploy --prod
-```
-
-**GitHub Pages:**
-Push to `gh-pages` branch or enable Pages in repository settings.
-
-## Contributing
-
-This is an open protocol. Contributions are welcome:
-
-1. **Specification feedback** — Open an issue or discussion
-2. **Implementation libraries** — Submit a PR to add your library
-3. **Platform integrations** — Let us know if you've implemented ARR
-
-## License
-
-- **Specification:** CC0 (Public Domain)
-- **Website code:** MIT
+That's it. That's the whole idea.
 
 ---
 
-*All Rights Respected — Not a company. A protocol. Given away freely.*
+## What this is
+
+**ARR** (All Rights Respected) is an open protocol for creative attribution. It's a format for saying "I made this" in a way that:
+
+- Lives inside the file itself
+- Can be verified cryptographically
+- Expires after a few years (nothing is permanent)
+- Can be revoked if you change your mind
+- Requires no company, no registry, no fees
+
+It's infrastructure. Like QR codes. Like email. Something anyone can implement, owned by no one.
+
+## What this isn't
+
+- **Legal proof.** This won't hold up in court. It's not designed to.
+- **Identity verification.** You can be anonymous. Pseudonymous. Whatever you want.
+- **A requirement.** Work without ARR deserves the same respect as work with it.
+- **A business.** There's no company here. No funding round. Just an idea.
+
+## Why now
+
+The vocabulary for "AI-generated content attribution" is being defined right now. Whoever writes the dictionary shapes the conversation.
+
+I'd rather the dictionary be written by people who make things than by people who sue people who make things.
+
+## If you're curious
+
+- [Read the protocol](https://allrightsrespected.com/spec.html)
+- [See the site](https://allrightsrespected.com)
+
+## If you want to help
+
+I genuinely don't know what help looks like yet. Maybe you implement it in your tool. Maybe you poke holes in the spec. Maybe you tell me this is naive and won't work.
+
+All of that is useful.
+
+---
+
+*Earnestly,*
+
+*January 2026*
