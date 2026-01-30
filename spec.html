@@ -372,8 +372,7 @@
       }
 
       .toc {
-        padding: 1rem 1.25rem;
-        text-align: left;
+        padding: 1rem;
       }
 
       .toc-title {
@@ -384,19 +383,16 @@
       }
 
       .toc ol {
-        padding-left: 0;
-        margin-left: 0;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .toc li {
         margin-bottom: 0.4rem;
-        display: flex;
-        align-items: baseline;
-      }
-
-      .toc li::before {
-        flex-shrink: 0;
-        min-width: 1.5rem;
+        text-align: left;
       }
     }
   </style>
