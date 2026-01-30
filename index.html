@@ -690,17 +690,37 @@
       </div>
     </section>
 
+    <!-- Origin of © -->
+    <section class="origin-section" style="border-top: 1px solid var(--border);">
+      <div class="section-header">THE ORIGIN OF ©</div>
+
+      <h2 style="margin-bottom: 1.5rem;">In 1886, authors had a problem.</h2>
+
+      <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.8; max-width: 750px; margin-bottom: 1.5rem;">A book published in London could be pirated and sold in Paris with no recourse. The <strong style="color: var(--fg);">Berne Convention</strong> was born&mdash;the first international agreement to protect creative works across borders.</p>
+
+      <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.8; max-width: 750px; margin-bottom: 2rem;">For over a century, <strong style="color: var(--fg);">"All Rights Reserved"</strong> was the universal signal:</p>
+
+      <p style="color: var(--fg); font-size: 1.5rem; font-style: italic; margin-bottom: 2rem; max-width: 750px;">I made this. I own this.</p>
+
+      <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.8; max-width: 750px; margin-bottom: 1.5rem;">It worked because the world was built on scarcity:</p>
+
+      <ul style="color: var(--muted); font-size: 1.05rem; line-height: 2.2; max-width: 750px; margin-bottom: 2rem; list-style: none; padding-left: 0;">
+        <li style="padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">—</span> Copying required effort</li>
+        <li style="padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">—</span> Distribution required infrastructure</li>
+        <li style="padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">—</span> Authorship was obvious</li>
+        <li style="padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">—</span> One creator, one work, one claim</li>
+      </ul>
+    </section>
+
     <!-- Bridge: From © to ARR -->
     <section class="bridge-section" style="border-top: 1px solid var(--border);">
       <div class="section-header">FROM © TO Ⓐ Ⓡ Ⓡ</div>
 
-      <h2 style="margin-bottom: 1.5rem;">"All Rights Reserved" was built for a different world.</h2>
+      <h2 style="margin-bottom: 1.5rem;">Then AI arrived.</h2>
 
-      <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.8; max-width: 750px; margin-bottom: 1.5rem;">A world where creation was slow, copying was difficult, and authorship was obvious.</p>
+      <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.8; max-width: 750px; margin-bottom: 1.5rem;">Now anyone generates images, text, music in seconds. Training data includes millions of works. Ownership is contested. Courts are confused.</p>
 
-      <p style="color: var(--fg); font-size: 1.25rem; margin-bottom: 1.5rem;">AI changed everything.</p>
-
-      <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.8; max-width: 750px; margin-bottom: 2rem;">Now anyone generates images, text, music in seconds. Training data includes millions of works. Ownership is contested. Courts are confused. The old model assumes scarcity&mdash;we live in abundance.</p>
+      <p style="color: var(--muted); font-size: 1.1rem; line-height: 1.8; max-width: 750px; margin-bottom: 2rem;">The assumptions that made © work&mdash;scarcity, clear authorship, physical copies&mdash;no longer hold.</p>
 
       <p style="color: var(--fg); font-size: 1.25rem; margin-bottom: 1.5rem;"><strong>All Rights Respected</strong> is the evolution.</p>
 
@@ -715,69 +735,32 @@
       <p style="color: var(--fg); font-size: 1.1rem; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.02em;">No lawyers. No registries. Just mutual respect.</p>
     </section>
 
-    <!-- Protocol Section -->
-    <section class="protocol-section" id="protocol">
-      <div class="section-header">THE ATTESTATION FORMAT</div>
+    <!-- Timing / Why Now -->
+    <section class="timing-section">
+      <div class="section-header">WHY NOW</div>
 
-      <h2 style="display: flex; justify-content: space-between; align-items: center;">
-        <span>What an ARR attestation looks like</span>
-        <span style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--bg); border: 1px solid var(--accent); padding: 0.5rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.05em; color: var(--accent);"><span style="font-size: 1rem;">&#9398;</span><span style="font-size: 1rem;">&#9415;</span><span style="font-size: 1rem;">&#9415;</span> ATTESTED</span>
-      </h2>
+      <h2>The infrastructure must exist before the moment arrives</h2>
 
-      <div class="spec-preview">
-        <pre><span class="key">attestation</span>:
-  <span class="key">version</span>: <span class="string">"arr/0.1"</span>
-  <span class="key">created</span>: <span class="string">"2026-01-29T10:30:00Z"</span>
-  <span class="key">creator</span>: <span class="string">"hash:7f3a9b2c..."</span>  <span class="comment"># privacy-preserving</span>
-  <span class="key">intent</span>: <span class="string">"Poster design for climate campaign"</span>
-  <span class="key">tool</span>: <span class="string">"midjourney/6.1"</span>
-  <span class="key">upstream</span>: []  <span class="comment"># acknowledge what came before</span>
-  <span class="key">expires</span>: <span class="string">"2031-01-29"</span>  <span class="comment"># nothing is permanent</span>
-  <span class="key">revocable</span>: <span class="bool">true</span>
-  <span class="key">signature</span>: <span class="string">"ed25519:..."</span></pre>
-      </div>
-
-      <div class="feature-grid">
-        <div class="feature-card">
-          <h3>EMBEDDABLE</h3>
-          <p>Lives in file metadata. Travels with the work. No external registry required.</p>
+      <div class="timing-grid">
+        <div class="timing-column">
+          <h3>THE MOMENT</h3>
+          <p><strong>The legal frameworks are being written now.</strong></p>
+          <p>EU AI Act: Live.<br>
+          US Copyright Office: Ruling on AI authorship.<br>
+          Courts: NYT v. OpenAI, Getty v. Stability, artists v. everyone.</p>
+          <p>Whoever defines the vocabulary for "AI content attribution" shapes the conversation. We're not waiting for permission.</p>
         </div>
-        <div class="feature-card">
-          <h3>VERIFIABLE</h3>
-          <p>Anyone can verify. No API keys. No accounts. Cryptographic proof, not trust.</p>
-        </div>
-        <div class="feature-card">
-          <h3>OWNERLESS</h3>
-          <p>No company controls this. No licensing fees. Implement it however you want.</p>
+        <div class="timing-column">
+          <h3>THE PRECEDENT</h3>
+          <p><strong>QR codes were invented in 1994.</strong></p>
+          <p>Denso Wave gave them away&mdash;no licensing fees, no control. They languished for 26 years as an industrial tool.</p>
+          <p>Then smartphones arrived. Then the pandemic. Suddenly they were everywhere.</p>
+          <p><strong>We're building infrastructure for when the moment arrives.</strong> It may take years. The protocol will be ready.</p>
         </div>
       </div>
     </section>
 
-    <!-- What ARR Is Not -->
-    <section class="not-section">
-      <div class="section-header">WHAT THIS IS NOT</div>
-
-      <div class="not-grid">
-        <div class="not-card">
-          <h3>NOT LEGAL EVIDENCE</h3>
-          <p>ARR is a social protocol, not courtroom proof. Use it for human recognition, not litigation.</p>
-        </div>
-        <div class="not-card">
-          <h3>NOT IDENTITY</h3>
-          <p>Anonymous attestation is supported. You don't need to reveal who you are to claim what you made.</p>
-        </div>
-        <div class="not-card">
-          <h3>NOT PERMANENT</h3>
-          <p>Attestations expire by default. Creators can revoke anytime. We build for memory, not surveillance.</p>
-        </div>
-        <div class="not-card">
-          <h3>NOT REQUIRED</h3>
-          <p>Work without ARR deserves equal respect. Platforms that require ARR for access violate our principles.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Articles -->
+    <!-- Articles of Respect -->
     <section class="articles-section">
       <div class="section-header">THE ARTICLES OF RESPECT</div>
 
@@ -828,27 +811,64 @@
       </div>
     </section>
 
-    <!-- Timing -->
-    <section class="timing-section">
-      <div class="section-header">WHY NOW</div>
+    <!-- What ARR Is Not -->
+    <section class="not-section" style="border-top: 1px solid var(--border);">
+      <div class="section-header">WHAT THIS IS NOT</div>
 
-      <h2>The infrastructure must exist before the moment arrives</h2>
-
-      <div class="timing-grid">
-        <div class="timing-column">
-          <h3>THE MOMENT</h3>
-          <p><strong>The legal frameworks are being written now.</strong></p>
-          <p>EU AI Act: Live.<br>
-          US Copyright Office: Ruling on AI authorship.<br>
-          Courts: NYT v. OpenAI, Getty v. Stability, artists v. everyone.</p>
-          <p>Whoever defines the vocabulary for "AI content attribution" shapes the conversation. We're not waiting for permission.</p>
+      <div class="not-grid">
+        <div class="not-card">
+          <h3>NOT LEGAL EVIDENCE</h3>
+          <p>ARR is a social protocol, not courtroom proof. Use it for human recognition, not litigation.</p>
         </div>
-        <div class="timing-column">
-          <h3>THE PRECEDENT</h3>
-          <p><strong>QR codes were invented in 1994.</strong></p>
-          <p>Denso Wave gave them away&mdash;no licensing fees, no control. They languished for 26 years as an industrial tool.</p>
-          <p>Then smartphones arrived. Then the pandemic. Suddenly they were everywhere.</p>
-          <p><strong>We're building infrastructure for when the moment arrives.</strong> It may take years. The protocol will be ready.</p>
+        <div class="not-card">
+          <h3>NOT IDENTITY</h3>
+          <p>Anonymous attestation is supported. You don't need to reveal who you are to claim what you made.</p>
+        </div>
+        <div class="not-card">
+          <h3>NOT PERMANENT</h3>
+          <p>Attestations expire by default. Creators can revoke anytime. We build for memory, not surveillance.</p>
+        </div>
+        <div class="not-card">
+          <h3>NOT REQUIRED</h3>
+          <p>Work without ARR deserves equal respect. Platforms that require ARR for access violate our principles.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Protocol Section (The Reveal) -->
+    <section class="protocol-section" id="protocol">
+      <div class="section-header">THE ATTESTATION FORMAT</div>
+
+      <h2 style="display: flex; justify-content: space-between; align-items: center;">
+        <span>What an ARR attestation looks like</span>
+        <span style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--bg); border: 1px solid var(--accent); padding: 0.5rem 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.05em; color: var(--accent);"><span style="font-size: 1rem;">&#9398;</span><span style="font-size: 1rem;">&#9415;</span><span style="font-size: 1rem;">&#9415;</span> ATTESTED</span>
+      </h2>
+
+      <div class="spec-preview">
+        <pre><span class="key">attestation</span>:
+  <span class="key">version</span>: <span class="string">"arr/0.1"</span>
+  <span class="key">created</span>: <span class="string">"2026-01-29T10:30:00Z"</span>
+  <span class="key">creator</span>: <span class="string">"hash:7f3a9b2c..."</span>  <span class="comment"># privacy-preserving</span>
+  <span class="key">intent</span>: <span class="string">"Poster design for climate campaign"</span>
+  <span class="key">tool</span>: <span class="string">"midjourney/6.1"</span>
+  <span class="key">upstream</span>: []  <span class="comment"># acknowledge what came before</span>
+  <span class="key">expires</span>: <span class="string">"2031-01-29"</span>  <span class="comment"># nothing is permanent</span>
+  <span class="key">revocable</span>: <span class="bool">true</span>
+  <span class="key">signature</span>: <span class="string">"ed25519:..."</span></pre>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>EMBEDDABLE</h3>
+          <p>Lives in file metadata. Travels with the work. No external registry required.</p>
+        </div>
+        <div class="feature-card">
+          <h3>VERIFIABLE</h3>
+          <p>Anyone can verify. No API keys. No accounts. Cryptographic proof, not trust.</p>
+        </div>
+        <div class="feature-card">
+          <h3>OWNERLESS</h3>
+          <p>No company controls this. No licensing fees. Implement it however you want.</p>
         </div>
       </div>
     </section>
